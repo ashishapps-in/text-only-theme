@@ -1,0 +1,146 @@
+/*
+Theme Name: Textrim Inspired
+Theme URI: https://example.com/textrim-inspired
+Author: Codex
+Author URI: https://example.com
+Description: A minimal, text-first WordPress theme inspired by the Textrim Blogger aesthetic.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.5
+Requires PHP: 7.4
+Text Domain: textrim-inspired
+*/
+
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #666666;
+  --line: #e6e6e6;
+  --accent: #111111;
+  --max-width: 780px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.75;
+}
+
+a {
+  color: var(--accent);
+}
+
+.textrim-wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.5rem 1rem 4rem;
+}
+
+.textrim-site-title,
+.textrim-post-title {
+  font-family: "Arial Narrow", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.textrim-site-header {
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+}
+
+.textrim-site-title {
+  font-size: 1.65rem;
+  margin-bottom: 0.4rem;
+}
+
+.textrim-site-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.textrim-site-tagline {
+  color: var(--muted);
+  margin: 0;
+}
+
+.textrim-nav {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  padding: 0;
+  list-style: none;
+}
+
+.textrim-nav a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  font-size: 0.95rem;
+}
+
+.textrim-nav a:hover,
+.textrim-nav a:focus {
+  border-bottom-color: var(--accent);
+}
+
+.textrim-post {
+  border-bottom: 1px solid var(--line);
+  padding: 1.4rem 0 1.8rem;
+}
+
+.textrim-post:first-of-type {
+  padding-top: 0;
+}
+
+.textrim-post-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.35rem;
+}
+
+.textrim-post-title a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.textrim-post-title a:hover,
+.textrim-post-title a:focus {
+  text-decoration: underline;
+}
+
+.textrim-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+
+.textrim-excerpt p {
+  margin: 0;
+}
+
+.textrim-pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
+
+.textrim-empty {
+  padding: 1rem 0;
+  color: var(--muted);
+}
