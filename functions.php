@@ -11,6 +11,7 @@ if (!defined('ABSPATH')) {
 
 /**
  * Theme setup.
+ * Theme setup for Textrim Inspired.
  */
 function textrim_inspired_setup(): void
 {
@@ -98,3 +99,11 @@ function textrim_inspired_meta_description(): void
     }
 }
 add_action('wp_head', 'textrim_inspired_meta_description', 1);
+    add_theme_support('post-thumbnails');
+    add_theme_support('html5', ['search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script']);
+
+    register_nav_menus([
+        'primary' => __('Primary Menu', 'textrim-inspired'),
+    ]);
+}
+add_action('after_setup_theme', 'textrim_inspired_setup');
