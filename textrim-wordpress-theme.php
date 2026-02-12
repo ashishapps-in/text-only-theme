@@ -7,6 +7,10 @@
 get_header();
 ?>
 
+<main class="textrim-wrap">
+  <header class="textrim-site-header">
+    <h1 class="textrim-site-title">
+      <a href="<?php echo esc_url(home_url('/')); ?>">
 <style>
   :root {
     --bg: #ffffff;
@@ -141,6 +145,8 @@ get_header();
     wp_nav_menu([
       'theme_location' => 'primary',
       'container'      => 'nav',
+      'container_class' => 'textrim-menu',
+      'menu_class'     => 'textrim-nav',
       'container_class'=> 'textrim-nav',
       'fallback_cb'    => false,
     ]);
@@ -155,6 +161,7 @@ get_header();
         </h2>
 
         <p class="textrim-meta">
+          <?php echo esc_html(get_the_date()); ?> · <?php echo esc_html(get_the_author()); ?>
           <?php echo esc_html(get_the_date()); ?> · <?php the_author(); ?>
         </p>
 
