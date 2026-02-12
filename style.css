@@ -3,6 +3,8 @@ Theme Name: Textrim Inspired
 Theme URI: https://example.com/textrim-inspired
 Author: Codex
 Author URI: https://example.com
+Description: High-performance, text-first WordPress theme inspired by the Textrim Blogger aesthetic.
+Version: 2.0.0
 Description: A minimal, text-first WordPress theme inspired by the Textrim Blogger aesthetic.
 Version: 1.1.0
 Version: 1.0.0
@@ -15,6 +17,29 @@ Text Domain: textrim-inspired
 :root {
   --bg: #fcfcfc;
   --surface: #ffffff;
+  --text: #151515;
+  --muted: #666666;
+  --line: #dfdfdf;
+  --focus: #000;
+  --max-width: 780px;
+  --radius: 2px;
+  --space-1: 0.5rem;
+  --space-2: 0.85rem;
+  --space-3: 1.2rem;
+  --space-4: 1.8rem;
+  --space-5: 2.6rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { font-size: 18px; }
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--bg);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.72;
   --text: #161616;
   --muted: #666;
   --line: #dfdfdf;
@@ -48,6 +73,164 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible {
+  outline: 2px dashed var(--focus);
+  outline-offset: 3px;
+}
+
+.container {
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+}
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+
+.site-header .container { padding: 1rem 0 0.9rem; }
+
+.site-title {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+}
+
+.site-title a { text-decoration: none; }
+
+.site-tagline {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.menu,
+.footer-menu {
+  list-style: none;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  display: flex;
+  gap: 0.7rem 1rem;
+  flex-wrap: wrap;
+}
+
+.menu a,
+.footer-menu a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+}
+
+.menu a:hover,
+.menu a:focus-visible,
+.footer-menu a:hover,
+.footer-menu a:focus-visible { border-bottom-color: var(--text); }
+
+.site-main { padding: var(--space-5) 0; background: var(--surface); }
+
+.post-card,
+.single-post {
+  border-bottom: 1px solid var(--line);
+  padding: var(--space-4) 0;
+}
+
+.post-card:first-of-type,
+.single-post:first-of-type { padding-top: 0; }
+
+.entry-title,
+.single-title,
+.archive-title,
+.widget-title {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+}
+
+.entry-title { font-size: clamp(1.25rem, 2.5vw, 1.65rem); }
+.entry-title a { text-decoration: none; }
+.entry-title a:hover,
+.entry-title a:focus-visible { text-decoration: underline; }
+
+.entry-meta {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.73rem;
+}
+
+.entry-excerpt { margin-top: var(--space-3); }
+.entry-excerpt p { margin: 0; }
+
+.read-more-wrap { margin: var(--space-3) 0 0; }
+.read-more {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+}
+
+.pagination ul {
+  list-style: none;
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.pagination a,
+.pagination span {
+  display: inline-block;
+  border: 1px solid var(--line);
+  padding: 0.3rem 0.6rem;
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.82rem;
+}
+
+.pagination .current {
+  color: var(--surface);
+  background: var(--text);
+  border-color: var(--text);
+}
+
+.single-title {
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  margin-bottom: 0.6rem;
+}
+
+.single-content {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.75;
+}
+
+.single-content :where(p, ul, ol, blockquote, pre, table) {
+  max-width: 72ch;
+}
+
+.single-content :where(ul, ol) { padding-left: 1.35rem; }
+
+blockquote {
+  margin: 1.15rem 0;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--line);
+  color: #2f2f2f;
 main,
 article,
 nav,
@@ -294,6 +477,61 @@ blockquote {
 pre,
 code,
 kbd,
+samp { font-family: "Courier New", Courier, monospace; }
+
+pre {
+  border: 1px solid var(--line);
+  background: #fafafa;
+  padding: 0.75rem;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid var(--line); padding: 0.4rem 0.55rem; text-align: left; }
+
+/* Text-only behavior on list/archive views */
+.blog .post-card img,
+.archive .post-card img,
+.search .post-card img,
+.blog .post-thumbnail,
+.archive .post-thumbnail,
+.search .post-thumbnail,
+.blog figure,
+.archive figure,
+.search figure,
+.blog .wp-block-image,
+.archive .wp-block-image,
+.search .wp-block-image,
+.blog .wp-block-embed,
+.archive .wp-block-embed,
+.search .wp-block-embed {
+  display: none !important;
+}
+
+.sidebar {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--line);
+}
+
+.widget { margin-bottom: 1.2rem; }
+.widget-title { font-size: 0.9rem; margin-bottom: 0.45rem; }
+.widget ul { margin: 0; padding-left: 1rem; }
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.footer-inner {
+  padding: 1rem 0 2rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.footer-inner p { margin: 0; }
+
 samp {
   font-family: "Courier New", Courier, monospace;
   font-size: 0.88em;
@@ -343,6 +581,7 @@ hr {
   margin: -1px;
   padding: 0;
   overflow: hidden;
+  clip: rect(0 0 0 0);
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
@@ -352,6 +591,20 @@ hr {
   width: auto;
   height: auto;
   margin: 0.5rem;
+  padding: 0.45rem 0.7rem;
+  background: #fff;
+  border: 1px solid #000;
+  z-index: 9999;
+}
+
+@media (max-width: 768px) {
+  html { font-size: 17px; }
+  .site-main { padding: 2rem 0; }
+  .entry-meta { line-height: 1.5; }
+}
+
+@media (max-width: 480px) {
+  .container { width: min(100% - 1.2rem, var(--max-width)); }
   padding: 0.5rem 0.75rem;
   z-index: 100000;
   background: #fff;
